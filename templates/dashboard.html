@@ -1,0 +1,60 @@
+{% extends 'basic.html' %}
+
+{% block title %} All Contacts{% endblock %}
+
+{% block authLink %}
+ {{ authLink }}
+{% endblock %}
+
+{% block authText %}
+ {{ authText }}
+{% endblock %}
+
+{% block container_content %}
+
+    <table class="table table-hover table-bordered">
+  <thead >
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone #</th>
+        <th scope="col" colspan="2">Address</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for contact in contacts %}
+
+        <tr>
+          <th scope="row">{{ forloop.counter }}</th>
+          <td>
+              <a href="#">
+              {{ contact.first_name }}&nbsp;{{ contact.last_name }}
+              </a>
+          </td>
+          <td>{{ contact.email }}</td>
+          <td>{{ contact.phone_number }}</td>
+        <td class="foundation_sm" colspan="2">
+
+                    <i class="fas fa-home" ></i>{{ contact.house }}
+                    <i class="fas fa-road"></i>{{ contact.street }}
+                    <i class="fas fa-passport"></i>{{ contact.post_code }} <br>
+
+
+                    <i class="fas fa-city"></i>{{ contact.city }}
+                    <i class="fas fa-flag-usa"></i>{{ contact.state }}
+                    <i class="fas fa-globe-asia"></i>{{ contact.country }}
+
+        </td>
+
+
+        </tr>
+
+    {% endfor %}
+
+
+  </tbody>
+</table>
+
+
+{% endblock %}

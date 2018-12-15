@@ -1,0 +1,72 @@
+{% extends 'basic.html' %}
+{% load static %}
+
+{% block title %} Log In {% endblock %}
+
+{% block container_content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 col-xs-1">
+                </div>
+                <div class="col-md-8 col-xs-10">
+
+                    <div class="card">
+                              <div class="card-header">
+                                <h3>Log In</h3>
+                              </div>
+                              <div class="card-body">
+                                 <form action="" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+
+                                {% for field in form.visible_fields %}
+
+                                     <div class="form-group">
+                                         <div class="form-group row">
+                                            <label for="inputPassword" class="col-sm-3 col-form-label">{{ field.label_tag }}</label>
+                                            <div class="col-sm-9">
+                                              {{ field }}
+                                            </div>
+                                          </div>
+                                         {% if field.errors or  field.messages %}
+                                             <div class="form-group row">
+                                                <div class="col-sm-3"> </div>
+                                                <div class="col-sm-offset-3 col-sm-9">
+                                                    <span class="text-danger small">{{ field.errors }}</span>
+                                                </div>
+                                                <div class="col-sm-offset-3 col-sm-9">
+                                                    <span class="text-danger small">{{ field.messages}}</span>
+                                                </div>
+                                             </div>
+
+                                         {% endif %}
+
+
+                                    </div>
+
+                                {% endfor %}
+
+                                <div class="form-group row">
+                                        <div class="col-sm-3"></div>
+                                        <div class="col-sm-offset-3 col-sm-9">
+                                                 <button type="submit" class="btn btn-primary form-control">Log In</button> or  <a href="/signup">Sign Up</a>
+                                            </div>
+
+
+                                </div>
+                            </form>
+                              </div>
+                    </div>
+
+                </div>
+                <div class="col-md-2 col-xs-1">
+                </div>
+            </div><!--end of row-->
+        </div><!--end of container-->
+    </div>
+</div>
+{% endblock %}
+
+
+
