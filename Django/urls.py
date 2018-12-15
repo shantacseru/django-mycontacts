@@ -24,8 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('signup/', views.signup, name='signup'),
     path('addcontact/', views.addcontact, name='addcontact'),
-    path('/updatecontact/<int: idd>/', views.update, name='update'),
-    path('/deletecontact/<int: idd>/', views.delete, name='delete'),
+    path('updatecontact/<int: idd>/', views.update, name='update'),
+    path('deletecontact/<int: idd>/', views.delete, name='delete'),
     path('accounts/', include('django.contrib.auth.urls'))
 ]
 
