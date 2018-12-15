@@ -28,7 +28,7 @@
         <tr>
           <th scope="row">{{ forloop.counter }}</th>
           <td>
-              <a href="#">
+              <a href="{% url 'update' contact.id %}">
               {{ contact.first_name }}&nbsp;{{ contact.last_name }}
               </a>
           </td>

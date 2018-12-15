@@ -54,3 +54,34 @@ def notfound(request, param):
 
     return render('404.html', {'authText': 'Login', 'authLink': '/accounts/login'})
 
+
+def update(request, idd):
+    if Contacts.objects.filter(id=idd).exists():
+        contact = Contacts.objects.get(id=idd)
+        form = ContactForm(request.POST or None, instance=contact)
+        username = request.user.username
+        if form.is_valid():
+            obj = form.save(commit=False)
+            obj.user_id = username
+            obj.save()
+            return redirect('allcontacts')
+        else:
+            return render(request, 'form.html', {'form': form, 'title': 'Add New Contact',
+                                                 'browserTabTitle': 'Add Contact', 'submit': 'Update',
+                                                 'delete': 'Delete',
+                                                 'authText': 'Logout', 'authLink': '/accounts/logout'})
+    else:
+        render('404.html', {'authText': 'Login', 'authLink': '/accounts/login'})
+
+
+def delete(request, idd):
+    if Contacts.objects.filter(id=idd).exists():
+        contact = Contacts.objects.get(id=idd)
+        if request.method == 'POST':
+            contact.delete()
+            return redirect('allcontacts')
+        else:
+            return render(request, 'delete-contact-confirmation.html', {'contact': contact})
+    else:
+        render('404.html', {'authText': 'Login', 'authLink': '/accounts/login'})
+

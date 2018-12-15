@@ -1,0 +1,23 @@
+{% extends 'basic.html' %}
+
+{% block title %} All Contacts{% endblock %}
+
+{% block authLink %}
+ {{ authLink }}
+{% endblock %}
+
+{% block authText %}
+ {{ authText }}
+{% endblock %}
+
+{% block container_content %}
+    <div class="jumbotron text-center">
+        <form method="POST">
+            {% csrf_token %}
+            <p>You are deleting {{ contact.first_name }}&nbsp;{{ contact.last_name }}</p>
+            <p>Are you sure ? </p>
+            <button class="btn btn-danger" type="submit">Confirm</button>
+        </form>
+    </div>
+
+{% endblock %}
