@@ -8,7 +8,7 @@ class Contacts(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email = models.EmailField(max_length=100)
-    phone_number = models.CharField(max_length=20, unique=True)
+    phone_number = models.CharField(max_length=20)
     city = models.CharField(max_length=50)
     street = models.CharField(max_length=20)
     house = models.CharField(max_length=20)
