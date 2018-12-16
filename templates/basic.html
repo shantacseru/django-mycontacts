@@ -12,10 +12,7 @@
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
          integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 
-{#    <!-- Font Icon -->#}
-{#    <link rel="stylesheet" href="{% static  'fonts/material-icon/css/material-design-iconic-font.min.css'%}">#}
-    <!-- Main css -->
-    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -28,7 +25,11 @@
 
     
     {% block style %}
-    
+        <style>
+                .foundation_sm  i{
+                     padding: 6px;
+                }
+        </style>
     {% endblock %}
 
     <style>

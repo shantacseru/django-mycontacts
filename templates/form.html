@@ -61,13 +61,15 @@
                                 {% endfor %}
 
                                 <div class="form-group row">
-                                        <div class="col-sm-3"></div>
+                                        <div class="col-sm-3">
+                                            {% if deleteId %}
+                                                <a href="{% url 'delete' deleteId %}" class="btn btn-danger form-control">Delete</a>
+                                            {% endif %}
+                                        </div>
                                         <div class="col-sm-offset-3 col-sm-9">
                                                  <button type="submit" class="btn btn-primary form-control">{{submit}}</button>
                                             </div>
-                                    {% if delete %}
-                                        <a href=""
-                                    {% endif %}
+
 
 
                                 </div>

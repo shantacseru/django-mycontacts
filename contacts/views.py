@@ -68,7 +68,7 @@ def update(request, idd):
         else:
             return render(request, 'form.html', {'form': form, 'title': 'Add New Contact',
                                                  'browserTabTitle': 'Add Contact', 'submit': 'Update',
-                                                 'delete': 'Delete',
+                                                 'deleteId': contact.id,
                                                  'authText': 'Logout', 'authLink': '/accounts/logout'})
     else:
         render('404.html', {'authText': 'Login', 'authLink': '/accounts/login'})
