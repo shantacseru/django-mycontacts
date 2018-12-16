@@ -11,12 +11,20 @@
                 <div class="col-md-2 col-xs-1">
                 </div>
                 <div class="col-md-8 col-xs-10">
-
+                                {% if form.errors %}
+                                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                            <strong>username or password not correct</strong>
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                    {% endif %}
                     <div class="card">
                               <div class="card-header">
                                 <h3>Log In</h3>
                               </div>
                               <div class="card-body">
+
                                  <form action="" method="post" enctype="multipart/form-data">
                                 {% csrf_token %}
 

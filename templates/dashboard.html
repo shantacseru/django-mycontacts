@@ -35,15 +35,14 @@
           <td>{{ contact.email }}</td>
           <td>{{ contact.phone_number }}</td>
         <td class="foundation_sm" colspan="2">
-
-                    <i class="fas fa-home" ></i>{{ contact.house }}
-                    <i class="fas fa-road"></i>{{ contact.street }}
-                    <i class="fas fa-passport"></i>{{ contact.post_code }} <br>
-
-
-                    <i class="fas fa-city"></i>{{ contact.city }}
-                    <i class="fas fa-flag-usa"></i>{{ contact.state }}
-                    <i class="fas fa-globe-asia"></i>{{ contact.country }}
+                    <ul>
+                        <li><i class="fas fa-home" ></i>{{ contact.house }}</li>
+                        <li><i class="fas fa-road"></i>{{ contact.street }}</li>
+                        <li><i class="fas fa-passport"></i>{{ contact.post_code }}</li>
+                        <li><i class="fas fa-city"></i>{{ contact.city }}</li>
+                        <li><i class="fas fa-flag-usa"></i>{{ contact.state }}</li>
+                        <li><i class="fas fa-globe-asia"></i>{{ contact.country }}</li>
+                    </ul>
 
         </td>
 
